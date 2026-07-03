@@ -3,44 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 131 – Fundamentos da Web Dinâmica - MARCELO QUADROS</title>
-    <meta name="description" content="WDD 131 – Fundamentos da Web Dinâmica desenvolvido por Seu Nome Completo. Página de perfil contendo recursos de estudo, links institucionais e escrituras sagradas.">
-    <meta name="author" content="MARCELO QUADROS">
+    <title>WDD 131: Fundamentos da Web Dinâmica - Rubia M. Francesco</title>
     <link rel="stylesheet" href="base.css">
 </head>
 <body>
 
+    <!-- Cabeçalho Principal (Título da Disciplina) -->
     <header>
-        <h1>WDD 131 – Fundamentos da Web Dinâmica</h1>
-        <nav>
-            <ul>
-                <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
-                <li><a href="https://byupw.instructure.com/" target="_blank">Canvas</a></li>
-                <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=por&id=p7#p7" target="_blank">Escritura Favorita</a></li>
-                <li><a href="projeto-final/index.html">Projeto Final</a></li>
-            </ul>
-        </nav>
+        <h1>WDD 131: Fundamentos da Web Dinâmica - Rubia M. Francesco</h1>
     </header>
 
+    <!-- Barra de Navegação -->
+    <nav>
+        <ul>
+            <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+            <li><a href="https://instructure.com" target="_blank">Canvas</a></li>
+            <li><a href="https://churchofjesuschrist.org" target="_blank">Escritura</a></li>
+            <li><a href="projeto-final/index.html">Projeto Final</a></li>
+        </ul>
+    </nav>
+
+    <!-- Área de Conteúdo Principal -->
     <main>
-        <h1>MARCELO QUADROS</h1>
+        <h1>Rubia M. Francesco</h1>
 
-        <section class="card">
-            <h2>Sobre Mim</h2>
-            <img src="imagens/perfil.jpeg" alt="Foto de perfil de MARCELO QUADROS" width="300" height="300">
-            <p>Olá! Este é o meu espaço de aprendizado para o desenvolvimento de aplicações web dinâmicas.</p>
-        </section>
+        <!-- Contêiner Grid para alinhar os dois cartões lado a lado -->
+        <div class="grid-container">
 
-        <section class="card">
-            <h2>Recursos de Aprendizado</h2>
-            <img src="imagens/estudos.jpg" alt="Livros e ferramentas de desenvolvimento" width="300" height="200">
-            <p>Aqui acompanho as postagens, projetos práticos e o avanço dos meus estudos na área.</p>
-        </section>
+            <!-- CARTÃO DA ESQUERDA: Sobre Mim -->
+            <section class="card">
+                <h2>Sobre Mim</h2>
+                <div class="card-content">
+                    
+                    <!-- Grid interno para Texto + Foto de Perfil -->
+                    <div class="about-grid">
+                        <p class="about-text">
+                            Meu nome é Rubia e me chamam de Ruby. Nasci na África do Sul e vivo com minha família em Madagascar. 
+                            Atualmente trabalho como assistente jurídica administrativa em um escritório de advocacia. Meus filhos 
+                            são meu mundo e adoro passar tempo com eles. Amo viajar e amo aprender coisas novas.
+                        </p>
+                        <img src="imagens/perfil.jpeg" alt="Foto de perfil de Rubia M. Francesco" class="profile-img" width="150" height="150">
+                    </div>
+
+                    <!-- Subseção de Localização (Madagascar) -->
+                    <div class="location-section">
+                        <h3>Toloria, Madagascar</h3>
+                        
+                        <!-- Grid interno para Bandeira + Descrição Geográfica -->
+                        <div class="location-grid">
+                            <div class="flag-box">
+                                <img src="imagens/bandeira.png" alt="Bandeira Oficial de Madagascar" class="flag-img" width="140">
+                                <p class="flag-caption">Bandeira Oficial de Madagascar</p>
+                            </div>
+                            <p class="location-text">
+                                Madagascar é a 4ª maior ilha do mundo e está localizada no Oceano Índico. É o lar de 5% das espécies de plantas e animais do mundo, das quais mais de 80% são endêmicas de Madagascar. A ilha é mais conhecida por seus lêmures, baobás e baunilha.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- CARTÃO DA DIREITA: Recursos Web Dev -->
+            <section class="card">
+                <h2>Recursos Web Dev</h2>
+                <div class="card-content">
+                    <ul class="links-list">
+                        <li><a href="https://dev.to" target="_blank">Comunidade Dev.to</a></li>
+                        <li><a href="https://smashingmagazine.com" target="_blank">Revista Smashing</a></li>
+                        <li><a href="https://css-tricks.com" target="_blank">CSS Tricks</a></li>
+                        <li><a href="https://w3schools.com" target="_blank">W3 Schools</a></li>
+                        <li><a href="https://udemy.com" target="_blank">Udemy</a></li>
+                        <li><a href="https://picsum.photos" target="_blank">Imagem de Espaço Reservado Lorem Picsum</a></li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
     </main>
 
+    <!-- Rodapé -->
     <footer>
-        <p>&copy; <span id="anoatual"></span> | Marcelo Quadros | Rio Grande do Sul/Brasil</p>
-        <p id="ultimaModificacao"></p>
+        <p>&copy;2026 🌺 Rubia Magdalena Francesco 🌺 Madagascar</p>
+        <p class="last-modified">Last Modification: 06/03/2025 11:52:42</p>
     </footer>
 
 </body>

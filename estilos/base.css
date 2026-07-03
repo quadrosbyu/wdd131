@@ -1,18 +1,18 @@
-/* Importação de fontes limpas e modernas */
+/* Importação da fonte do Google Fonts */
 @import url('https://googleapis.com');
 
+/* Variáveis de Cores (Esquema Extraído da Imagem) */
 :root {
-    --primary-color: #1e4d75;      /* Azul escuro dos cabeçalhos dos cards */
-    --header-bg: #113355;          /* Azul bem escuro do cabeçalho principal */
-    --footer-bg: #113355;          /* Azul bem escuro do rodapé */
+    --primary-color: #1e4d75;      /* Azul dos cabeçalhos dos cartões */
+    --header-footer-bg: #113355;   /* Azul escuro do cabeçalho principal e rodapé */
     --nav-bg: #444444;             /* Cinza escuro da barra de navegação */
-    --text-color: #222222;          /* Cor do texto principal */
-    --border-color: #bbbbbb;        /* Cor das bordas cinzas */
-    --body-bg: #ffffff;
+    --text-color: #222222;          /* Texto principal */
+    --border-color: #bbbbbb;        /* Bordas cinzas dos cartões */
+    --white: #ffffff;
     --font-family: 'Open Sans', sans-serif;
 }
 
-/* Resets e Configurações Gerais */
+/* Reset Básico */
 * {
     margin: 0;
     padding: 0;
@@ -21,22 +21,26 @@
 
 body {
     font-family: var(--font-family);
-    background-color: var(--body-bg);
+    background-color: var(--white);
     color: var(--text-color);
     line-height: 1.5;
 }
 
-/* Cabeçalho Principal (Título da Disciplina) */
+/* Cabeçalho Principal */
 header {
-    background-color: var(--header-bg);
-    color: #ffffff;
+    background-color: var(--header-footer-bg);
+    color: var(--white);
     text-align: center;
     padding: 15px 10px;
-    font-size: 1.1rem;
-    font-weight: 400;
 }
 
-/* Barra de Navegação */
+header h1 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* Barra de Navegação (Flexbox) */
 nav {
     background-color: var(--nav-bg);
 }
@@ -47,18 +51,19 @@ nav ul {
     justify-content: space-around;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 10px 0;
+    padding: 12px 10px;
 }
 
 nav a {
-    color: #ffffff;
+    color: var(--white);
     text-decoration: none;
     font-size: 0.95rem;
-    padding: 5px 15px;
+    font-weight: 400;
+    padding: 4px 12px;
     transition: background-color 0.2s ease;
 }
 
-nav a:hover {
+nav a:hover, nav a:focus {
     background-color: #555555;
     border-radius: 4px;
 }
@@ -70,7 +75,7 @@ main {
     padding: 20px;
 }
 
-/* Nome do Aluno centralizado */
+/* Nome do Aluno */
 main h1 {
     text-align: center;
     font-size: 2.2rem;
@@ -79,27 +84,27 @@ main h1 {
     color: #000000;
 }
 
-/* Grid Layout para alinhar os dois cartões lado a lado */
+/* Grid Layout Principal (Cartões Lado a Lado) */
 .grid-container {
     display: grid;
-    grid-template-columns: 1.3fr 0.7fr; /* Card da esquerda ligeiramente maior */
+    grid-template-columns: 1.3fr 0.7fr; /* Cartão esquerdo maior */
     gap: 20px;
     align-items: start;
 }
 
-/* Estilização Base dos Cartões */
+/* Estilização Geral dos Cartões */
 .card {
     border: 1px solid var(--border-color);
     border-radius: 6px;
     overflow: hidden;
-    background-color: #ffffff;
-    min-height: 450px;
+    background-color: var(--white);
+    min-height: 480px;
 }
 
-/* Títulos Azuis no topo de cada Cartão */
+/* Cabeçalhos Azuis dos Cartões */
 .card h2 {
     background-color: var(--primary-color);
-    color: #ffffff;
+    color: var(--white);
     text-align: center;
     padding: 10px;
     font-size: 1.1rem;
@@ -107,12 +112,11 @@ main h1 {
     letter-spacing: 0.5px;
 }
 
-/* Conteúdo interno dos cartões */
 .card-content {
     padding: 20px;
 }
 
-/* Layout interno do Card 'Sobre Mim' */
+/* Grid Interno do Card 'Sobre Mim' */
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 150px;
@@ -129,9 +133,10 @@ main h1 {
     width: 100%;
     height: auto;
     border: 1px solid var(--border-color);
+    object-fit: cover;
 }
 
-/* Subseção de Localização (Toloria, Madagascar) */
+/* Subseção de Localização (Madagascar) */
 .location-section {
     border-top: 1px solid var(--border-color);
     padding-top: 15px;
@@ -141,10 +146,12 @@ main h1 {
 .location-section h3 {
     text-align: center;
     font-size: 1.2rem;
+    font-weight: 600;
     margin-bottom: 15px;
     color: #000000;
 }
 
+/* Grid para alinhar Bandeira e Texto Geográfico */
 .location-grid {
     display: grid;
     grid-template-columns: 140px 1fr;
@@ -174,28 +181,28 @@ main h1 {
     text-align: justify;
 }
 
-/* Links do Card da Direita */
+/* Lista de Links (Cartão da Direita) */
 .links-list {
     list-style: none;
-    padding: 10px 5px;
+    padding: 5px 0;
 }
 
 .links-list li {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     position: relative;
-    padding-left: 15px;
+    padding-left: 18px;
     font-size: 0.9rem;
 }
 
-/* Marcador de lista customizado azul */
+/* Marcador Azul Customizado */
 .links-list li::before {
     content: "•";
     color: #0000ff;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     position: absolute;
     left: 0;
-    top: -2px;
+    top: -3px;
 }
 
 .links-list a {
@@ -209,26 +216,26 @@ main h1 {
 
 /* Rodapé */
 footer {
-    background-color: var(--footer-bg);
-    color: #ffffff;
+    background-color: var(--header-footer-bg);
+    color: var(--white);
     text-align: center;
     padding: 20px 10px;
-    font-size: 0.9rem;
     margin-top: 40px;
+    font-size: 0.9rem;
 }
 
 footer p {
     margin-bottom: 5px;
 }
 
-/* Texto de modificação em amarelo */
+/* Texto de Modificação em Amarelo */
 .last-modified {
     color: #ffff00;
     font-size: 0.8rem;
     font-weight: 600;
 }
 
-/* Responsividade para telas menores (Celulares) */
+/* Responsividade (Telas de Smartphones) */
 @media (max-width: 768px) {
     .grid-container {
         grid-template-columns: 1fr;

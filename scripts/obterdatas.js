@@ -1,4 +1,4 @@
-/ Seleciona os elementos do rodapé pelos seus respectivos IDs
+// Seleciona os elementos do rodapé pelos seus respectivos IDs
 const yearSpan = document.getElementById("currentyear");
 const lastModifiedSpan = document.getElementById("lastModified");
 

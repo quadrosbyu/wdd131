@@ -1,17 +1,18 @@
-/* Importação de fontes do Google Fonts */
+/* Importação de fontes limpas e modernas */
 @import url('https://googleapis.com');
 
-/* Configurações Globais e Resets básicos */
 :root {
-    --primary-color: #003366;       /* Azul Escuro (Confiança/Profissionalismo) */
-    --secondary-color: #008080;     /* Teal/Verde-azulado (Destaque e Hovers) */
-    --accent-color: #f4f4f9;        /* Cinza Claro (Fundos de cards) */
-    --text-color: #333333;          /* Cinza Escuro (Excelente contraste para leitura) */
-    --white: #ffffff;
-    --heading-font: 'Montserrat', sans-serif;
-    --body-font: 'Open Sans', sans-serif;
+    --primary-color: #1e4d75;      /* Azul escuro dos cabeçalhos dos cards */
+    --header-bg: #113355;          /* Azul bem escuro do cabeçalho principal */
+    --footer-bg: #113355;          /* Azul bem escuro do rodapé */
+    --nav-bg: #444444;             /* Cinza escuro da barra de navegação */
+    --text-color: #222222;          /* Cor do texto principal */
+    --border-color: #bbbbbb;        /* Cor das bordas cinzas */
+    --body-bg: #ffffff;
+    --font-family: 'Open Sans', sans-serif;
 }
 
+/* Resets e Configurações Gerais */
 * {
     margin: 0;
     padding: 0;
@@ -19,141 +20,242 @@
 }
 
 body {
-    font-family: var(--body-font);
-    background-color: #fdfdfd;
+    font-family: var(--font-family);
+    background-color: var(--body-bg);
     color: var(--text-color);
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
-/* Header */
+/* Cabeçalho Principal (Título da Disciplina) */
 header {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 1.5rem 1rem;
+    background-color: var(--header-bg);
+    color: #ffffff;
     text-align: center;
+    padding: 15px 10px;
+    font-size: 1.1rem;
+    font-weight: 400;
 }
 
-header h1 {
-    font-family: var(--heading-font);
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
+/* Barra de Navegação */
+nav {
+    background-color: var(--nav-bg);
 }
 
-/* Configuração do span solicitada no prompt */
-header h1 span {
-    display: block;
-    margin: 0 auto;
-}
-
-/* Navegação com Flexbox */
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px 0;
 }
 
 nav a {
-    color: var(--white);
+    color: #ffffff;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Efeito Hover na Navegação */
-nav a:hover, nav a:focus {
-    background-color: var(--secondary-color);
-    color: var(--white);
-    outline: none;
-}
-
-/* Main Content - Centralizado e com largura limitada */
-main {
-    max-width: 960px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
-
-main h1 {
-    font-family: var(--heading-font);
-    color: var(--primary-color);
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    border-bottom: 2px solid var(--secondary-color);
-    padding-bottom: 0.5rem;
-}
-
-/* Grid Layout para os Cartões */
-main {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-}
-
-@media (min-width: 600px) {
-    main {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    main h1 {
-        grid-column: 1 / -1; /* Faz o título principal ocupar toda a largura */
-    }
-}
-
-/* Cartões (Princípio de Proximidade e Repetição) */
-.card {
-    background-color: var(--accent-color);
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.card h2 {
-    font-family: var(--heading-font);
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
-}
-
-.card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 6px;
-    margin-bottom: 1rem;
-    object-fit: cover;
-    border: 3px solid var(--white);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.card p {
     font-size: 0.95rem;
+    padding: 5px 15px;
+    transition: background-color 0.2s ease;
 }
 
-/* Footer */
-footer {
-    background-color: var(--primary-color);
-    color: var(--white);
+nav a:hover {
+    background-color: #555555;
+    border-radius: 4px;
+}
+
+/* Área de Conteúdo Principal */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Nome do Aluno centralizado */
+main h1 {
     text-align: center;
-    padding: 1.5rem 1rem;
-    margin-top: 3rem;
+    font-size: 2.2rem;
+    font-weight: 300;
+    margin: 20px 0 30px 0;
+    color: #000000;
+}
+
+/* Grid Layout para alinhar os dois cartões lado a lado */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr; /* Card da esquerda ligeiramente maior */
+    gap: 20px;
+    align-items: start;
+}
+
+/* Estilização Base dos Cartões */
+.card {
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #ffffff;
+    min-height: 450px;
+}
+
+/* Títulos Azuis no topo de cada Cartão */
+.card h2 {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Conteúdo interno dos cartões */
+.card-content {
+    padding: 20px;
+}
+
+/* Layout interno do Card 'Sobre Mim' */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 150px;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.about-text {
+    font-size: 0.9rem;
+    text-align: justify;
+}
+
+.profile-img {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--border-color);
+}
+
+/* Subseção de Localização (Toloria, Madagascar) */
+.location-section {
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.location-section h3 {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #000000;
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 15px;
+    align-items: center;
+}
+
+.flag-box {
+    text-align: center;
+}
+
+.flag-img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #dddddd;
+}
+
+.flag-caption {
+    font-size: 0.75rem;
+    font-style: italic;
+    color: #555555;
+    margin-top: 5px;
+}
+
+.location-text {
+    font-size: 0.85rem;
+    text-align: justify;
+}
+
+/* Links do Card da Direita */
+.links-list {
+    list-style: none;
+    padding: 10px 5px;
+}
+
+.links-list li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 15px;
     font-size: 0.9rem;
 }
 
-footer p {
-    margin-bottom: 0.5rem;
+/* Marcador de lista customizado azul */
+.links-list li::before {
+    content: "•";
+    color: #0000ff;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
 }
 
-footer p:last-child {
-    margin-bottom: 0;
-    color: #b0c4de; /* Tom mais claro para metadados de modificação */
+.links-list a {
+    color: #0000ff;
+    text-decoration: underline;
 }
+
+.links-list a:hover {
+    color: #000099;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--footer-bg);
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 0.9rem;
+    margin-top: 40px;
+}
+
+footer p {
+    margin-bottom: 5px;
+}
+
+/* Texto de modificação em amarelo */
+.last-modified {
+    color: #ffff00;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Responsividade para telas menores (Celulares) */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .profile-img {
+        max-width: 150px;
+        margin: 0 auto;
+    }
+
+    .location-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .flag-img {
+        max-width: 140px;
+        margin: 0 auto;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }

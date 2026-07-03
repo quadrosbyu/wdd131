@@ -1,20 +1,15 @@
-* ==========================================================================
-   1. CONFIGURAÇÕES GERAIS E TIPOGRAFIA (Paleta de cores e Usabilidade)
-   ========================================================================== */
+/* Importação de fontes do Google Fonts */
+@import url('https://googleapis.com');
+
+/* Configurações Globais e Resets básicos */
 :root {
-    /* Paleta de Cores com alto contraste */
-    --primary-color: #002c54;     /* Azul escuro institucional */
-    --secondary-color: #4f86c6;   /* Azul suave para destaques e hovers */
-    --accent-color: #c0392b;      /* Vermelho escuro para pontos focais ou links */
-    --text-dark: #2c3e50;         /* Grafite escuro para leitura ideal */
-    --text-light: #ffffff;        /* Texto claro */
-    --bg-light: #f8f9fa;          /* Fundo suave da página */
-    --bg-card: #ffffff;           /* Fundo limpo para os cartões */
-    --border-color: #e2e8f0;      /* Divisores sutis */
-    
-    /* Fontes integradas via Google Fonts API */
-    --font-heading: 'Outfit', sans-serif;
-    --font-body: 'Roboto', sans-serif;
+    --primary-color: #003366;       /* Azul Escuro (Confiança/Profissionalismo) */
+    --secondary-color: #008080;     /* Teal/Verde-azulado (Destaque e Hovers) */
+    --accent-color: #f4f4f9;        /* Cinza Claro (Fundos de cards) */
+    --text-color: #333333;          /* Cinza Escuro (Excelente contraste para leitura) */
+    --white: #ffffff;
+    --heading-font: 'Montserrat', sans-serif;
+    --body-font: 'Open Sans', sans-serif;
 }
 
 * {
@@ -24,175 +19,141 @@
 }
 
 body {
-    font-family: var(--font-body);
-    background-color: var(--bg-light);
-    color: var(--text-dark);
+    font-family: var(--body-font);
+    background-color: #fdfdfd;
+    color: var(--text-color);
     line-height: 1.6;
 }
 
-/* ==========================================================================
-   2. HEADER & NAVEGAÇÃO (CSS Flexbox e Efeito Hover)
-   ========================================================================== */
+/* Header */
 header {
     background-color: var(--primary-color);
-    color: var(--text-light);
-    padding: 2rem 1rem;
+    color: var(--white);
+    padding: 1.5rem 1rem;
     text-align: center;
 }
 
 header h1 {
-    font-family: var(--font-heading);
-    font-size: 2.2rem;
-    margin-bottom: 1.5rem;
-    font-weight: 600;
+    font-family: var(--heading-font);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
 }
 
-/* Elemento span renderizado como bloco para facilitar alinhamento */
-header span {
+/* Configuração do span solicitada no prompt */
+header h1 span {
     display: block;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-    color: var(--secondary-color);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Navegação estruturada com CSS Flexbox */
-nav {
-    max-width: 800px;
     margin: 0 auto;
 }
 
+/* Navegação com Flexbox */
 nav ul {
+    list-style: none;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     gap: 1.5rem;
-    list-style: none;
+    flex-wrap: wrap;
 }
 
 nav a {
-    color: var(--text-light);
+    color: var(--white);
     text-decoration: none;
-    font-weight: 500;
-    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
     border-radius: 4px;
-    transition: all 0.3s ease; /* Transição suave de estados */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Efeito Hover Bem Projetado */
-nav a:hover {
+/* Efeito Hover na Navegação */
+nav a:hover, nav a:focus {
     background-color: var(--secondary-color);
-    color: var(--text-light);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: var(--white);
+    outline: none;
 }
 
-/* ==========================================================================
-   3. LAYOUT PRINCIPAL (Largura Limitada e Centralizado)
-   ========================================================================== */
+/* Main Content - Centralizado e com largura limitada */
 main {
-    max-width: 960px; /* Largura limite ideal para telas desktop */
-    margin: 2rem auto; /* Centralização horizontal automática */
-    padding: 0 1.5rem;
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1rem;
 }
 
 main h1 {
-    font-family: var(--font-heading);
+    font-family: var(--heading-font);
     color: var(--primary-color);
     text-align: center;
     margin-bottom: 2rem;
     font-size: 2rem;
-    border-bottom: 3px solid var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
     padding-bottom: 0.5rem;
-    display: inline-block;
 }
 
-/* Centraliza o título h1 caso o bloco use inline-block */
-:has(> main h1) {
-    text-align: center;
-}
-
-/* Organização dos Cartões utilizando CSS Grid */
+/* Grid Layout para os Cartões */
 main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 600px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    main h1 {
+        grid-column: 1 / -1; /* Faz o título principal ocupar toda a largura */
+    }
+}
+
+/* Cartões (Princípio de Proximidade e Repetição) */
+.card {
+    background-color: var(--accent-color);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-/* Grid aplicada diretamente no agrupamento ou na estrutura de cartões */
-.card-container, 
-main {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsividade sem media queries */
-    gap: 2rem; /* Princípio de proximidade e espaçamento consistente */
-    width: 100%;
-}
-
-/* Ajustando o h1 do main para cruzar todas as colunas do grid */
-main h1 {
-    grid-column: 1 / -1;
-    justify-self: center;
-}
-
-/* ==========================================================================
-   4. ESTILIZAÇÃO DOS CARTÕES (Classe .card com Repetição e Contraste)
-   ========================================================================== */
-.card {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    transition: transform 0.2s ease;
-}
-
-.card:hover {
-    transform: translateY(-4px); /* Discreta interação visual de usabilidade */
+    text-align: center;
 }
 
 .card h2 {
-    font-family: var(--font-heading);
+    font-family: var(--heading-font);
     color: var(--primary-color);
+    margin-bottom: 1rem;
     font-size: 1.4rem;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.5rem;
 }
 
-/* Imagens Locais e Otimizadas */
 .card img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
-    object-fit: cover;
     border-radius: 6px;
-    display: block;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    border: 3px solid var(--white);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .card p {
-    font-size: 1rem;
-    color: var(--text-dark);
+    font-size: 0.95rem;
 }
 
-/* ==========================================================================
-   5. FOOTER
-   ========================================================================== */
+/* Footer */
 footer {
     background-color: var(--primary-color);
-    color: var(--text-light);
+    color: var(--white);
     text-align: center;
     padding: 1.5rem 1rem;
     margin-top: 3rem;
     font-size: 0.9rem;
-    border-top: 4px solid var(--secondary-color);
 }
 
 footer p {
-    margin: 0.4rem 0;
+    margin-bottom: 0.5rem;
 }
 
-footer p#ultimaModificacao {
-    color: var(--secondary-color);
-    font-style: italic;
+footer p:last-child {
+    margin-bottom: 0;
+    color: #b0c4de; /* Tom mais claro para metadados de modificação */
 }

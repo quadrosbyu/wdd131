@@ -1,0 +1,102 @@
+/* --- GOOGLE FONTS VIA API --- */
+@import url('https://googleapis.com');
+
+/* --- VARIÁVEIS DE DESIGN (Esquema de Cores e Tipografia) --- */
+:root {
+    --primary-color: #1a365d;    /* Azul Escuro (Confiança/Estabilidade) */
+    --accent-color: #d69e2e;     /* Dourado (Destaque/Contraste) */
+    --text-color: #2d3748;       /* Grafite (Leitura Confortável) */
+    --bg-color: #f7fafc;         /* Off-White (Descanso Visual) */
+    --card-bg: #ffffff;          /* Branco Puro para os Cards */
+    --font-title: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* --- RESET & CONFIGURAÇÕES GERAIS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- ELEMENTO MAIN (Largura Limitada e Centralizado) --- */
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto; /* Centraliza horizontalmente e dá espaçamento vertical */
+}
+
+h1, h2, h3 {
+    font-family: var(--font-title);
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* --- NAVEGAÇÃO COM CSS FLEX --- */
+nav {
+    background-color: var(--primary-color);
+    padding: 1rem;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column; /* Coluna no mobile */
+    gap: 1rem;
+    list-style: none;
+    text-align: center;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+/* Efeito Hover na Navegação */
+nav a:hover {
+    color: var(--accent-color);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+/* --- LAYOUT DE ELEMENTOS FIGURE (CSS Grid Móvel) --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Apenas 1 coluna no mobile */
+    gap: 2rem; /* Espaço em branco consistente entre os elementos */
+    padding: 1rem 0;
+}
+
+figure {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+figure:hover {
+    transform: translateY(-5px); /* Efeito sutil de proximidade/interação */
+}
+
+figure img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Garante que a imagem não distorça */
+    display: block;
+}
+
+figcaption {
+    padding: 1.5rem;
+    font-size: 0.95rem;
+}

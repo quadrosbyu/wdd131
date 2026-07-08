@@ -1,0 +1,20 @@
+/* --- MEDIA QUERY PARA TELAS GRANDES (Desktop/Tablets) --- */
+@media screen and (min-width: 768px) {
+    
+    /* Ajuste da Navegação para Horizontal */
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    /* CSS Grid Responsivo usando auto-fit e minmax */
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2.5rem; /* Aumenta o espaço em branco em telas maiores */
+    }
+    
+    main {
+        margin: 4rem auto; /* Mais espaçamento para respirar no desktop */
+    }
+}

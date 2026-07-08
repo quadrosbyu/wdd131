@@ -1,6 +1,3 @@
-/* --- GOOGLE FONTS VIA API --- */
-@import url('https://googleapis.com');
-
 /* --- VARIÁVEIS DE DESIGN (Esquema de Cores e Tipografia) --- */
 :root {
     --primary-color: #1a365d;    /* Azul Escuro (Confiança/Estabilidade) */

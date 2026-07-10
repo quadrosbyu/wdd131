@@ -32,27 +32,3 @@ header nav a:focus {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem; /* Aumenta ligeiramente o espaço entre os itens no desktop */
 }
-/* --- MEDIA QUERY PARA TELAS MAIORES --- */
-@media screen and (min-width: 768px) {
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 2rem;
-        text-align: left;
-    }
-
-    header span {
-        margin-bottom: 0;
-    }
-
-    header nav ul {
-        flex-direction: row;
-        gap: 1rem;
-    }
-
-    .grid-container {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-    }
-}

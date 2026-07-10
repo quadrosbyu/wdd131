@@ -23,10 +23,10 @@ body {
     line-height: 1.6;
 }
 
-/* Elemento Estrutural: Header */
+/* Elemento Estrutural: Header (Base Mobile) */
 header {
-    background-color: #1a365d; /* Azul profundo para contraste */
-    color: #ffffff;
+    background-color: var(--primary-color);
+    color: #ffffff; /* Força todo texto dentro do header a ser branco puro */
     padding: 1rem;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

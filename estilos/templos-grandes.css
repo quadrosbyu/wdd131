@@ -1,20 +1,34 @@
-/* --- MEDIA QUERY PARA TELAS GRANDES (Desktop/Tablets) --- */
-@media screen and (min-width: 768px) {
-    
-    /* Ajuste da Navegação para Horizontal */
-    nav ul {
-        flex-direction: row;
-        justify-content: center;
-        gap: 2rem;
-    }
+/* Reconfiguração da Navegação para telas maiores (Mudança para linha) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    text-align: left;
+}
 
-    /* CSS Grid Responsivo usando auto-fit e minmax */
-    .grid-container {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2.5rem; /* Aumenta o espaço em branco em telas maiores */
-    }
-    
-    main {
-        margin: 4rem auto; /* Mais espaçamento para respirar no desktop */
-    }
+header span {
+    margin-bottom: 0; /* Remove a margem inferior usada no mobile */
+}
+
+header nav ul {
+    flex-direction: row; /* Alinha os itens em linha horizontal */
+    gap: 1rem;
+}
+
+header nav a {
+    padding: 0.5rem 1rem;
+}
+
+header nav a:hover, 
+header nav a:focus {
+    padding-left: 1rem; /* Reseta o deslocamento lateral do mobile */
+    transform: scale(1.05); /* Aplica efeito de crescimento suave no desktop */
+}
+
+/* Reconfiguração da Grade de Imagens com repeat, auto-fit e minmax */
+.grid-container {
+    /* Cria colunas responsivas automáticas de no mínimo 300px que se ajustam sozinhos */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem; /* Aumenta ligeiramente o espaço entre os itens no desktop */
 }

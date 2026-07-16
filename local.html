@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra o Destino Perfeito</title>
+    <meta name="description" content="Explore a cultura, o clima e os pontos turísticos deste lugar incrível.">
+    <!-- Vinculação do CSS -->
+    <link rel="stylesheet" href="css/local.css">
+    <!-- Vinculação do JS com DEFER -->
+    <script src="js/local.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Portal do Destino</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Atrações</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Imagem Principal Responsiva usando WebP e srcset -->
+        <section class="hero-section">
+            <picture>
+                <source srcset="images/hero-large.webp" media="(min-width: 768px)">
+                <img src="images/hero-small.webp" alt="Paisagem deslumbrante do destino turístico" class="hero-img">
+            </picture>
+            <div class="hero-text">
+                <h2>Bem-vindo ao Paraíso</h2>
+                <p>Conheça uma das cidades mais encantadoras do mundo.</p>
+            </div>
+        </section>
+
+        <!-- Conteúdo Principal e Grid -->
+        <div class="content-container">
+            
+            <!-- Seção de Informações -->
+            <section class="info-card">
+                <h3>Sobre o Lugar</h3>
+                <p>Este destino oferece uma mistura rica de história, culinária fascinante e paisagens naturais de tirar o fôlego. Perfeito para aventureiros e famílias.</p>
+            </section>
+
+            <!-- Seção do Clima (Requisito de Ícones Diferentes) -->
+            <section class="weather-card">
+                <div class="weather-header">
+                    <h3>Clima <span class="desktop-emoji">⛅</span></h3>
+                    <!-- Ícone SVG visível apenas no Mobile -->
+                    <svg class="mobile-icon" xmlns="http://w3.org" viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M19.36 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.64-4.96z" fill="#90a4ae"/>
+                    </svg>
+                </div>
+                <div class="weather-info">
+                    <p><strong>Temperatura:</strong> <span id="temp">24</span>°C</p>
+                    <p><strong>Condição:</strong> Parcialmente Nublado</p>
+                    <p><strong>Vento:</strong> <span id="wind">12</span> km/h</p>
+                    <p><strong>Sensação Térmica:</strong> <span id="chill">N/A</span></p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> | Portal Turístico | Modificado em: <span id="last-modified"></span></p>
+    </footer>
+
+</body>
+</html>

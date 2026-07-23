@@ -480,3 +480,86 @@ body {
     font-size: 0.95rem;
     color: rgba(255, 255, 255, 0.8); /* Branco levemente suave para melhor leitura */
 }
+/* ==========================================================================
+   SEÇÃO SOBRE NÓS
+   ========================================================================== */
+
+.about-section {
+    padding: 5rem 0;
+    background-color: var(--color-surface, #ffffff);
+    border-bottom: 1px solid var(--color-border, #e2e8f0);
+}
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Limita a largura do texto para garantir uma leitura confortável */
+.about-content {
+    max-width: 800px;
+    width: 100%;
+    text-align: left;
+}
+
+/* Título alinhado à esquerda para quebrar o padrão centralizado */
+.section-title-left {
+    font-size: 2.2rem;
+    color: var(--color-primary, #0F4C81);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+/* Parágrafos explicativos */
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text-main, #2D3142);
+    margin-bottom: 1.5rem;
+}
+
+.about-text strong {
+    color: var(--color-primary, #0F4C81);
+}
+
+/* Badges de Destaque */
+.about-badges {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.badge-item {
+    background-color: var(--color-background, #f4f6f9);
+    border: 1px solid var(--color-border, #e2e8f0);
+    color: var(--color-text-main, #2D3142);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   ADAPTAÇÃO MOBILE (ADICIONAR NA SUA MEDIA QUERY MÓVEL)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 4rem 0;
+    }
+
+    .section-title-left {
+        font-size: 1.8rem;
+        text-align: center; /* Centraliza o título no celular */
+    }
+
+    .about-text {
+        font-size: 1rem;
+        text-align: justify; /* Melhora o encaixe do texto em telas pequenas */
+    }
+
+    .about-badges {
+        justify-content: center; /* Centraliza os selos no celular */
+    }
+}

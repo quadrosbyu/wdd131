@@ -41,7 +41,7 @@ const templos = [
     localizacao: "Lima, Peru",
     consagracao: "1986, 10 de janeiro",
     area: 9600,
-    urlDaImagem: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/lima-peru/400x250/lima-peru-temple-lds-273996-wallpaper.jpg"
+    urlDaImagem: "/imagens/limaperu.jpg"
   },
   {
     nomeDoTemplo: "Cidade do México, México",
@@ -55,21 +55,21 @@ const templos = [
     localizacao: "Curitiba, Paraná, Brasil",
     consagracao: "2008, 1 de junho",
     area: 27850,
-    urlDaImagem: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/curitiba-brasil/400x250/curitiba-brasil-temple-lds-273995-wallpaper.jpg"
+    urlDaImagem: "/imagens/curitibabrasil.jpg"
   },
   {
     nomeDoTemplo: "Frankfurt Alemanha",
     localizacao: "Friedrichsdorf, Alemanha",
     consagracao: "1987, 28 de agosto",
     area: 32895,
-    urlDaImagem: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/frankfurt-alemanha/400x250/frankfurt-alemanha-temple-lds-273994-wallpaper.jpg"
+    urlDaImagem: "/imagens/frankfurtalemanha.jpg"
   },
   {
     nomeDoTemplo: "Paris França",
     localizacao: "Le Chesnay, França",
     consagracao: "2017, 21 de maio",
     area: 44175,
-    urlDaImagem: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/paris-franca/400x250/paris-franca-temple-lds-273993-wallpaper.jpg"
+    urlDaImagem: "/imagens/parisfranca.jpg"
   }
 ];
 

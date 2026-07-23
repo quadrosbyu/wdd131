@@ -111,3 +111,15 @@ body {
     padding: 1.5rem 0;
     margin-top: 4rem;
 }
+/* Configuração do Logotipo */
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 50px;       /* Ajuste a altura máxima desejada para a logo */
+    width: auto;        /* Mantém a proporção da imagem */
+    object-fit: contain;
+}

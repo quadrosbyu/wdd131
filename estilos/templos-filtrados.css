@@ -1,0 +1,169 @@
+/* --- VARIÁVEIS DE DESIGN (Esquema de Cores e Tipografia) --- */
+:root {
+    --primary-color: #1a365d;    /* Azul Escuro (Confiança/Estabilidade) */
+    --accent-color: #d69e2e;     /* Dourado (Destaque/Contraste) */
+    --text-color: #2d3748;       /* Grafite (Leitura Confortável) */
+    --bg-color: #f7fafc;         /* Off-White (Descanso Visual) */
+    --card-bg: #ffffff;          /* Branco Puro para os Cards */
+    --font-title: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* Configurações Globais e Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f4f6f9;
+    color: #333333;
+    line-height: 1.6;
+}
+
+/* Elemento Estrutural: Header (Base Mobile) */
+header {
+    background-color: var(--primary-color);
+    color: #ffffff; /* Força todo texto dentro do header a ser branco puro */
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+/* CSS Flex na navegação nav */
+header nav ul {
+    display: flex;
+    flex-direction: column; /* Coluna no mobile para evitar esmagamento */
+    gap: 0.5rem;
+    list-style: none;
+}
+
+header nav a {
+    display: block;
+    color: #e2e8f0;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Efeito Hover e Foco na Navegação */
+header nav a:hover, 
+header nav a:focus {
+    background-color: #2b6cb0;
+    color: #ffffff;
+    padding-left: 1.25rem; /* Leve deslocamento visual amigável */
+}
+
+/* Elemento Estrutural: Main (Largura limitada e centralizado) */
+main {
+    max-width: 1200px; /* Permite boa amplitude em telas maiores */
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+main h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: #2c5282;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    position: relative;
+}
+
+/* CSS Grid para os elementos figure - Padrão Mobile (1 Coluna) */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Apenas 1 coluna no mobile */
+    gap: 1.5rem; /* Espaço em branco consistente entre os cards */
+}
+
+/* Estilização dos Cards (figure) e Efeitos de Imagem */
+figure {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+figure:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
+}
+
+figure img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Evita distorção das imagens dos templos */
+    display: block;
+}
+
+figcaption {
+    padding: 1rem;
+    font-weight: 600;
+    color: #4a5568;
+    text-align: center;
+    border-top: 3px solid #cbd5e0;
+}
+
+/* Rodapé */
+footer {
+    background-color: #2d3748;
+    color: #a0aec0;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+footer p:last-child {
+    margin-bottom: 0;
+}
+/* --- MEDIA QUERY PARA TELAS MAIORES --- */
+@media screen and (min-width: 768px) {
+    header {
+    padding: 1rem 2rem;
+    text-align: left;
+  }
+
+  header span {
+    margin-bottom: 0;
+  }
+
+  header nav ul {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  header nav a {
+    padding: 0.5rem 1rem;
+  }
+
+  header nav a:hover, 
+  header nav a:focus {
+    padding-left: 1rem;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+}

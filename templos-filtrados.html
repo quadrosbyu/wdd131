@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página inicial de Marcelo Quadros  Fundamentos da Web Dinâmica.">
+    <meta name="author" content="Marcelo Quadros">
+    <title>Álbum do Templo</title>
+
+    <!-- Links do Google Fonts obrigatórios -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Ordem correta CSS para Mobile-First: Base primeiro, depois telas maiores -->
+    <link rel="stylesheet" href="estilos/templos-filtrados.css">
+    <link rel="stylesheet" href="estilos/templos-grande-filtrados.css" media="screen and (min-width: 768px)">
+    
+    <!-- Referência ao arquivo JavaScript adiada (defer) para otimizar o carregamento -->
+    <script src="scripts/templos-filtrados.js" defer></script>
+</head>
+<body>
+
+    <!-- Elemento Estrutural: Header -->
+    <header>
+        <span>Álbum do Templo</span>
+        <nav>
+            <ul>
+                <li><a href="#">Página Inicial</a></li>
+                <li><a href="#">Antigo</a></li>
+                <li><a href="#">Novo</a></li>
+                <li><a href="#">Grande</a></li>
+                <li><a href="#">Pequeno</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Elemento Estrutural: Main (Largura limitada e centralizado pelo CSS) -->
+    <main>
+        <h1>Galeria de Templos</h1>
+        
+        <!-- Container que ativa o layout CSS Grid -->
+        <div class="grid-container">
+            
+            <!-- Figura 1 -->
+            <figure>
+                <img src="imagens/kyoto.jpg" alt="Templo de Kyoto">
+                <figcaption>Templo de Kyoto</figcaption>
+            </figure>
+
+            <!-- Figura 2 -->
+            <figure>
+                <img src="imagens/lotuus.jpg" alt="Templo de Lótus">
+                <figcaption>Templo de Lótus</figcaption>
+            </figure>
+
+            <!-- Figura 3 -->
+            <figure>
+                <img src="imagens/angkor.jpg" alt="Templo de Angkor Wat">
+                <figcaption>Templo de Angkor Wat</figcaption>
+            </figure>
+
+            <!-- Figura 4 -->
+            <figure>
+                <img src="imagens/templedourado.jpg" alt="Templo Dourado">
+                <figcaption>Templo Dourado</figcaption>
+            </figure>
+
+            <!-- Figura 5 -->
+            <figure>
+                <img src="imagens/partenontemple.jpg" alt="Partenon">
+                <figcaption>Partenon</figcaption>
+            </figure>
+
+            <!-- Figura 6 -->
+            <figure>
+                <img src="imagens/borobudur.jpg" alt="Templo Borobudur">
+                <figcaption>Templo Borobudur</figcaption>
+            </figure>
+
+            <!-- Figura 7 -->
+            <figure>
+                <img src="imagens/templesky.jpg" alt="Templo do Céu">
+                <figcaption>Templo do Céu</figcaption>
+            </figure>
+
+            <!-- Figura 8 -->
+            <figure>
+                <img src="imagens/templo-abu-simbel.jpg" alt="Templo de Abu Simbel">
+                <figcaption>Templo de Abu Simbel</figcaption>
+            </figure>
+
+            <!-- Figura 9 -->
+            <figure>
+                <img src="imagens/prambanan.jpg" alt="Templo de Prambanan">
+                <figcaption>Templo de Prambanan</figcaption>
+            </figure>
+
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+       <footer>
+    <p>©<span id="currentyear"></span>2026 | Marcelo Quadros | Uruguaiana, RS</p>
+    <p>Last Modification: <span id="lastModified"></span></p>
+</footer>
+ 
+</body>
+</html>

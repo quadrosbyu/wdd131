@@ -1,4 +1,4 @@
-// Array de Objetos de Templos (Atualizado com mais 3 templos reais)
+// Array contendo os 10 objetos de templos solicitados
 const templos = [
   {
     nomeDoTemplo: "Aba Nigeria",
@@ -72,9 +72,13 @@ const templos = [
   }
 ];
 
-// Aguarda o carregamento completo do DOM
 document.addEventListener("DOMContentLoaded", () => {
     
+    // --- ELEMENTOS DO DOM ---
+    const container = document.getElementById("grid-container");
+    const tituloGaleria = document.querySelector("main h1");
+    const linksMenu = document.querySelectorAll("nav ul li a");
+
     // --- GERENCIAMENTO DO MENU HAMBÚRGUER ---
     const menuToggle = document.getElementById("menu-toggle");
     const navMenu = document.getElementById("nav-menu");
@@ -92,84 +96,72 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // --- GERENCIAMENTO DE DATAS NO RODAPÉ ---
+    // --- DATAS DO RODAPÉ ---
     const yearSpan = document.getElementById("currentyear");
     const lastModifiedSpan = document.getElementById("lastModified");
-
     if (yearSpan) yearSpan.textContent = new Date().getFullYear();
     if (lastModifiedSpan) lastModifiedSpan.textContent = document.lastModified;
 
-    // --- GERENCIAMENTO DA GALERIA DINÂMICA ---
-    const container = document.getElementById("grid-container");
-    const tituloGaleria = document.getElementById("gallery-title");
-
-    // Função responsável por iterar no array e criar os "Cartões de Templo"
+    // --- FUNÇÃO PARA CRIAR E EXIBIR OS CARTÕES DOS TEMPLOS ---
     function exibirTemplos(listaFiltrada) {
-        container.innerHTML = ""; // Limpa os elementos antigos da página
+        // Limpa todos os elementos internos antigos da grid
+        container.innerHTML = ""; 
         
         listaFiltrada.forEach(templo => {
-            // Cria o elemento estrutural ideal para cartões de imagem (figure)
+            // Cria o elemento estrutural <figure> exigido para imagens com legenda
             const card = document.createElement("figure");
             card.classList.add("temple-card");
 
-            // Injeta a estrutura HTML estruturada com carregamento lento nativo (loading="lazy")
+            // Define o HTML interno com chaves idênticas ao objeto e carregamento lento nativo
             card.innerHTML = `
                 <h3>${templo.nomeDoTemplo}</h3>
-                <p><span class="label">Localização:</span> ${templo.localizacao}</p>
-                <p><span class="label">Consagração:</span> ${templo.consagracao}</p>
-                <p><span class="label">Área total:</span> ${templo.area.toLocaleString()} pés²</p>
-                <img src="${templo.urlDaImagem}" alt="Fotografia do Templo de ${templo.nomeDoTemplo}" loading="lazy">
+                <p><strong>Localização:</strong> ${templo.localizacao}</p>
+                <p><strong>Consagração:</strong> ${templo.consagracao}</p>
+                <p><strong>Área total:</strong> ${templo.area.toLocaleString()} pés²</p>
+                <img src="${templo.urlDaImagem}" alt="Templo de ${templo.nomeDoTemplo}" loading="lazy">
             `;
             container.appendChild(card);
         });
     }
 
-    // Função auxiliar para extrair o ano de forma segura da string de consagração (Pega os primeiros 4 caracteres numéricos)
-    function obterAnoConsagracao(dataStr) {
-        return parseInt(dataStr.split(",")[0].trim());
+    // --- FUNÇÃO AUXILIAR PARA EXTRAIR O ANO DA STRING ---
+    // Transforma "2005, 7 de agosto" no número inteiro 2005 de forma segura
+    function obterAno(stringConsagracao) {
+        const partes = stringConsagracao.split(",");
+        return parseInt(partes[0].trim(), 10);
     }
 
-    // --- CONFIGURAÇÃO DOS EVENTOS DE FILTRAGEM ---
-    
-    // Página Inicial – exibe todos os templos armazenados no array
-    document.getElementById("home").addEventListener("click", (e) => {
-        e.preventDefault();
-        tituloGaleria.textContent = "Galeria de Templos - Todos";
-        exibirTemplos(templos);
+    // --- SISTEMA DINÂMICO DE FILTRAGEM BASEADO NO TEXTO DO LINK ---
+    linksMenu.forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault(); // Evita que a página recarregue ao clicar no link '#'
+
+            const opcaoFiltro = link.textContent.trim();
+            let resultadoFiltro = [];
+
+            // Estrutura condicional para validar as regras solicitadas de negócio
+            if (opcaoFiltro === "Página Inicial") {
+                tituloGaleria.textContent = "Galeria de Templos";
+                resultadoFiltro = templos;
+            } else if (opcaoFiltro === "Antigo") {
+                tituloGaleria.textContent = "Galeria de Templos - Antigos (Antes de 1900)";
+                resultadoFiltro = templos.filter(t => obterAno(t.consagracao) < 1900);
+            } else if (opcaoFiltro === "Novo") {
+                tituloGaleria.textContent = "Galeria de Templos - Novos (Depois de 2000)";
+                resultadoFiltro = templos.filter(t => obterAno(t.consagracao) > 2000);
+            } else if (opcaoFiltro === "Grande") {
+                tituloGaleria.textContent = "Galeria de Templos - Grandes (Mais de 90.000 pés²)";
+                resultadoFiltro = templos.filter(t => t.area > 90000);
+            } else if (opcaoFiltro === "Pequeno") {
+                tituloGaleria.textContent = "Galeria de Templos - Pequenos (Menos de 10.000 pés²)";
+                resultadoFiltro = templos.filter(t => t.area < 10000);
+            }
+
+            // Executa a atualização visual dos cards na tela
+            exibirTemplos(resultadoFiltro);
+        });
     });
 
-    // Antigos – templos construídos antes de 1900
-    document.getElementById("antigo").addEventListener("click", (e) => {
-        e.preventDefault();
-        tituloGaleria.textContent = "Galeria de Templos - Antigos (Antes de 1900)";
-        const filtrados = templos.filter(t => obterAnoConsagracao(t.consagracao) < 1900);
-        exibirTemplos(filtrados);
-    });
-
-    // Novos – templos construídos depois de 2000
-    document.getElementById("novo").addEventListener("click", (e) => {
-        e.preventDefault();
-        tituloGaleria.textContent = "Galeria de Templos - Novos (Depois de 2000)";
-        const filtrados = templos.filter(t => obterAnoConsagracao(t.consagracao) > 2000);
-        exibirTemplos(filtrados);
-    });
-
-    // Grandes – templos maiores que 90.000 pés quadrados
-    document.getElementById("grande").addEventListener("click", (e) => {
-        e.preventDefault();
-        tituloGaleria.textContent = "Galeria de Templos - Grandes (Mais de 90.000 pés²)";
-        const filtrados = templos.filter(t => t.area > 90000);
-        exibirTemplos(filtrados);
-    });
-
-    // Pequenos – templos menores que 10.000 pés quadrados
-    document.getElementById("pequeno").addEventListener("click", (e) => {
-        e.preventDefault();
-        tituloGaleria.textContent = "Galeria de Templos - Pequenos (Menos de 10.000 pés²)";
-        const filtrados = templos.filter(t => t.area < 10000);
-        exibirTemplos(filtrados);
-    });
-
-    // Renderização inicial automática da página com todos os templos
+    // Inicialização da página carregando todos os templos automaticamente
     exibirTemplos(templos);
 });

@@ -12,7 +12,7 @@ const templos = [
     localizacao: "Manti, Utah, Estados Unidos",
     consagracao: "1888, 21 de maio",
     area: 74792,
-    urlDaImagem: "imagens/manti-utah-temple.jpg"
+    urlDaImagem: "https://churchofjesuschristtemples.org/manti-utah-temple/photographs/#Official-16"
   },
   {
     nomeDoTemplo: "Payson Utah",

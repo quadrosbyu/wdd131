@@ -453,3 +453,30 @@ body {
         max-width: 220px;
     }
 }
+/*==========================================================================
+   RODAPÉ (FOOTER) CENTRALIZADO
+   ========================================================================== */
+.main-footer {
+    background-color: var(--color-text-main, #1e293b);
+    color: var(--color-text-light, #ffffff);
+    padding: 1.5rem 0;
+    margin-top: 4rem;
+    width: 100%;
+}
+
+/* Garante que o container interno alinhe tudo ao centro */
+.main-footer .container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente o conteúdo do flexbox */
+    align-items: center;     /* Alinha verticalmente */
+    text-align: center;      /* Garante a centralização do texto caso ele quebre linhas */
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-footer p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8); /* Branco levemente suave para melhor leitura */
+}

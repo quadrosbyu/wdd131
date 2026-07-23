@@ -111,15 +111,60 @@ body {
     padding: 1.5rem 0;
     margin-top: 4rem;
 }
-/* Configuração do Logotipo */
-.logo-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
+/* ==========================================================================
+   CONFIGURAÇÃO DO CABEÇALHO (HEADER) E LOGOTIPO
+   ========================================================================== */
+
+/* Ajuste no cabeçalho para dar suporte e destaque aos elementos internos */
+.main-header {
+    background-color: var(--color-surface, #ffffff);
+    border-bottom: 1px solid var(--color-border, #e2e8f0);
+    padding: 0.8rem 0; /* Espaçamento interno vertical equilibrado */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Garante que o cabeçalho fique sempre visível sobre o conteúdo */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03); /* Sombra leve para destacar do fundo */
 }
 
+/* Alinhamento da estrutura interna do cabeçalho */
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Container do link do logotipo */
+.logo-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0;
+    text-decoration: none;
+    transition: transform 0.2s ease; /* Efeito de transição suave ao interagir */
+}
+
+/* Efeito de destaque ao passar o mouse ou focar no logotipo */
+.logo-link:hover {
+    transform: scale(1.03); /* Aumenta levemente o tamanho para indicar interatividade */
+}
+
+/* Imagem do Logotipo em si */
 .logo-img {
-    height: 50px;       /* Ajuste a altura máxima desejada para a logo */
-    width: auto;        /* Mantém a proporção da imagem */
-    object-fit: contain;
+    height: 60px; /* Altura ideal para destaque sem ocupar espaço excessivo */
+    width: auto;  /* Preserva as proporções originais da imagem da empresa */
+    max-width: 220px; /* Evita que logos muito horizontais quebrem o layout */
+    object-fit: contain; /* Garante que a imagem não seja cortada ou distorcida */
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.08)); /* Sombra sutil na silhueta da própria imagem */
+}
+
+/* Garantia de alinhamento para o menu ao lado da logo */
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem; /* Espaçamento elegante entre os itens do menu */
+    margin: 0;
+    padding: 0;
+    align-items: center;
 }

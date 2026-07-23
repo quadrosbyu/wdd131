@@ -135,28 +135,30 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
-
 /* Container do link do logotipo */
 .logo-link {
     display: inline-flex;
     align-items: center;
-    padding: 0.2rem 0;
     text-decoration: none;
-    transition: transform 0.2s ease; /* Efeito de transição suave ao interagir */
+    padding: 0;
+    margin-top: -8px;    /* Puxa a logo levemente para cima */
+    margin-bottom: -8px; /* Puxa a logo levemente para baixo */
+    z-index: 1010;       /* Garante que ela fique acima de qualquer sombra */
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efeito elástico ao passar o mouse */
 }
-
-/* Efeito de destaque ao passar o mouse ou focar no logotipo */
+/* Efeito de destaque ao passar o mouse */
 .logo-link:hover {
-    transform: scale(1.03); /* Aumenta levemente o tamanho para indicar interatividade */
+    transform: scale(1.08); /* Aumento mais perceptível e nítido */
 }
-
 /* Imagem do Logotipo em si */
 .logo-img {
-    height: 60px; /* Altura ideal para destaque sem ocupar espaço excessivo */
-    width: auto;  /* Preserva as proporções originais da imagem da empresa */
-    max-width: 220px; /* Evita que logos muito horizontais quebrem o layout */
-    object-fit: contain; /* Garante que a imagem não seja cortada ou distorcida */
-    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.08)); /* Sombra sutil na silhueta da própria imagem */
+    height: 85px; /* Aumentado de 60px para 85px para dar imponência extrema */
+    width: auto;  /* Preserva as proporções originais da imagem */
+    max-width: 280px; /* Permite uma largura maior para logos horizontais */
+    object-fit: contain;
+    /* Sombra projetada refinada para fazer o logotipo "saltar" da tela */
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.12)) 
+            drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.08)); 
 }
 
 /* Garantia de alinhamento para o menu ao lado da logo */
@@ -435,5 +437,19 @@ body {
     .btn-submit {
         width: 100%; /* No celular o botão ocupa toda a largura para facilitar o toque */
         text-align: center;
+    }
+}
+/* ==========================================================================
+   AJUSTE REQUISITADO NA VERSÃO MÓVEL (DENTRO DA SUA MEDIA QUERY MÓVEL)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .logo-link {
+        margin-top: 0;    /* Remove as margens negativas no celular para não esmagar */
+        margin-bottom: 0;
+    }
+
+    .logo-img {
+        height: 65px;     /* No celular, mantém um tamanho grande e nítido (era 50px) */
+        max-width: 220px;
     }
 }

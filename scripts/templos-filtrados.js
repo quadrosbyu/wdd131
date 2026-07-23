@@ -27,7 +27,7 @@ const templos = [
     localizacao: "Yigo, Guam",
     consagracao: "2020, 2 de maio",
     area: 6861,
-    urlDaImagem: "https://pt.thechurchnews.com/templos/2023/8/10/23827270/templo-yigo-guam-reabre-fechamento-resultante-tufao-mawar/400x250/templo-yigo-guam-reabre-fechamento-resultante-tufao-ma"
+    urlDaImagem: "/imagens/ygoguam.jpg"
   },
   {
     nomeDoTemplo: "Washington D.C.",

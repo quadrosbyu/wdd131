@@ -296,3 +296,144 @@ body {
         margin-bottom: 2rem;
     }
 }
+/* ==========================================================================
+   SEÇÃO DE CONTATO E FORMULÁRIO (LAYOUT EM DUAS COLUNAS)
+   ========================================================================== */
+
+.contact-section {
+    padding: 5rem 0;
+    background-color: var(--color-surface, #ffffff);
+    border-top: 1px solid var(--color-border, #e2e8f0);
+}
+
+.contact-container {
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Layout dividido em duas partes iguais no Desktop */
+.contact-layout {
+    display: flex;
+    gap: 4rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.contact-form-box, .contact-info-box {
+    flex: 1; /* Distribui metade do espaço para cada bloco */
+}
+
+.contact-form-box h3, .contact-info-box h3 {
+    font-size: 1.6rem;
+    color: var(--color-text-main, #1e293b);
+    margin-bottom: 1.5rem;
+}
+
+/* Estrutura do Formulário */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-main, #1e293b);
+}
+
+/* Campos de entrada de dados de texto */
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: 6px;
+    background-color: var(--color-background, #f8fafc);
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--color-text-main, #1e293b);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Efeito de foco quando o usuário clica para digitar */
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary, #0F4C81);
+    box-shadow: 0 0 0 3px rgba(15, 76, 129, 0.1); /* Brilho sutil na cor da marca */
+}
+
+/* Botão de Envio do Formulário */
+.btn-submit {
+    background-color: var(--color-primary, #0F4C81);
+    color: #ffffff;
+    border: none;
+    padding: 0.85rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    align-self: flex-start; /* Impede o botão de esticar em toda a largura */
+}
+
+.btn-submit:hover {
+    background-color: var(--color-primary-hover, #1d4ed8);
+}
+
+/* Bloco de Informações de Endereço */
+.contact-intro {
+    color: var(--color-text-muted, #64748b);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.info-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-top: 0.2rem;
+}
+
+.info-item h4 {
+    font-size: 1.05rem;
+    color: var(--color-text-main, #1e293b);
+    margin-bottom: 0.25rem;
+}
+
+.info-item p {
+    font-size: 0.95rem;
+    color: var(--color-text-muted, #64748b);
+    margin: 0;
+}
+
+/* ==========================================================================
+   ADAPTAÇÃO ADICIONAL PARA O MOBILE (INCLUIR NA SUA MEDIA QUERY MÓVEL)
+   ========================================================================== */
+@media (max-width: 850px) {
+    .contact-layout {
+        flex-direction: column; /* Transforma o layout lado a lado em lista vertical */
+        gap: 3rem;
+    }
+    
+    .btn-submit {
+        width: 100%; /* No celular o botão ocupa toda a largura para facilitar o toque */
+        text-align: center;
+    }
+}

@@ -1,0 +1,113 @@
+/* Definição das variáveis de cores globais */
+:root {
+    --color-primary: #3b82f6;       /* Azul principal */
+    --color-primary-hover: #1d4ed8; /* Azul escuro para hover */
+    --color-secondary: #10b981;     /* Verde secundário */
+    --color-background: #f8fafc;    /* Fundo claro da página */
+    --color-surface: #ffffff;       /* Fundo de elementos (cards, headers) */
+    --color-text-main: #1e293b;     /* Texto principal escuro */
+    --color-text-muted: #64748b;    /* Texto secundário/cinza */
+    --color-text-light: #ffffff;    /* Texto claro para fundos escuros */
+    --color-border: #e2e8f0;        /* Cor de bordas e divisores */
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text-main);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Header */
+.main-header {
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--color-text-muted);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-menu a:hover {
+    color: var(--color-primary);
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 5rem 0;
+    text-align: center;
+    background-color: var(--color-surface);
+    margin-top: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+}
+
+.hero-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+/* Botão */
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-hover);
+}
+
+/* Footer */
+.main-footer {
+    background-color: var(--color-text-main);
+    color: var(--color-text-light);
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 4rem;
+}

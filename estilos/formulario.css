@@ -1,0 +1,208 @@
+/* ==========================================================================
+   PRINCÍPIOS DE DESIGN APLICADOS (CRAP)
+   ========================================================================== */
+:root {
+    /* Paleta de Cores e Contraste Harmonioso */
+    --bg-gradient: linear-gradient(135deg, #e0f2f1 0%, #e2e8f0 100%);
+    --card-bg: #ffffff;
+    --primary-teal: #0d9488;      /* Cor de foco e identidade */
+    --primary-dark: #115e59;      /* Texto principal e títulos */
+    --accent-amber: #d97706;      /* Botão de ação (Contraste Máximo) */
+    --accent-hover: #b45309;
+    --star-active: #f59e0b;       /* Amarelo vivo para estrelas */
+    --text-main: #1e293b;         /* Legibilidade ideal */
+    --text-muted: #64748b;
+    --border-light: #cbd5e1;
+    --border-focus: #0d9488;
+    
+    /* Tipografia Moderna e Escaneável */
+    --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Reset básico e tipografia */
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    font-family: var(--font-family); 
+}
+
+body { 
+    background: var(--bg-gradient); 
+    color: var(--text-main); 
+    padding: 40px 20px; 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; 
+    align-items: center;
+}
+
+/* CONTAINER (Alinhamento e Repetição) */
+main { 
+    max-width: 540px; 
+    width: 100%; 
+    background: var(--card-bg); 
+    padding: 40px; 
+    border-radius: 16px; 
+    box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+/* HIERARQUIA VISUAL */
+h1 { 
+    color: var(--primary-dark);
+    font-size: 1.8rem; 
+    font-weight: 800;
+    text-align: center; 
+    margin-bottom: 8px;
+    letter-spacing: -0.025em;
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 32px;
+}
+
+/* PROXIMIDADE (Campos agrupados logicamente) */
+.form-group { 
+    margin-bottom: 24px; 
+    display: flex; 
+    flex-direction: column; 
+}
+
+/* RÓTULOS (Legibilidade e Acessibilidade) */
+label { 
+    font-weight: 600; 
+    margin-bottom: 6px; 
+    font-size: 0.9rem; 
+    color: var(--primary-dark);
+}
+
+.required-dot {
+    color: #ef4444;
+    margin-left: 2px;
+}
+
+/* ENTRADAS DE DADOS (Usabilidade e Feedback Visual) */
+select, input[type="text"], input[type="date"], textarea {
+    width: 100%; 
+    padding: 12px 14px; 
+    border: 2px solid var(--border-light); 
+    border-radius: 8px; 
+    font-size: 0.95rem; 
+    color: var(--text-main);
+    background-color: #fafafa;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Efeito de foco unificado (Repetição) */
+select:focus, input:focus, textarea:focus { 
+    outline: none; 
+    border-color: var(--border-focus); 
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.15); 
+}
+
+/* ESTILIZAÇÃO DAS ESTRELAS (Feedback interativo e Micro-interações) */
+.stars { 
+    display: flex; 
+    flex-direction: row-reverse; 
+    justify-content: flex-end; 
+    gap: 8px; 
+    margin-top: 4px;
+}
+.stars input { display: none; }
+.stars label { 
+    font-size: 2.2rem; 
+    color: #e2e8f0; 
+    cursor: pointer; 
+    transition: transform 0.1s ease, color 0.2s ease; 
+    margin: 0; 
+}
+/* Inverte a seleção via CSS para preenchimento da esquerda para a direita */
+.stars input:checked ~ label, 
+.stars label:hover, 
+.stars label:hover ~ label { 
+    color: var(--star-active); 
+}
+.stars label:active {
+    transform: scale(1.2); /* Feedback tátil ao clicar */
+}
+
+/* CHECKBOXES (Alinhamento em Grid) */
+.checkbox-group { 
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 12px; 
+    margin-top: 6px; 
+}
+.checkbox-item { 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    padding: 10px 12px;
+    border: 2px solid var(--border-light);
+    border-radius: 8px;
+    background-color: #fafafa;
+    cursor: pointer; 
+    transition: all 0.2s ease;
+}
+/* Altera o box inteiro ao focar/marcar para facilitar clique no mobile */
+.checkbox-item:hover {
+    border-color: var(--primary-teal);
+    background-color: #f0fdfa;
+}
+.checkbox-item input { 
+    width: 18px; 
+    height: 18px; 
+    accent-color: var(--primary-teal); /* Cor customizada nativa */
+    cursor: pointer; 
+}
+.checkbox-item label { 
+    margin: 0; 
+    font-weight: 500; 
+    color: var(--text-main);
+    cursor: pointer; 
+}
+
+/* BOTÃO DE ENVIO (Contraste de Destaque - Ponto Focal) */
+input[type="submit"] {
+    background-color: var(--accent-amber); 
+    color: white; 
+    border: none; 
+    padding: 16px; 
+    border-radius: 8px; 
+    font-size: 1.05rem; 
+    font-weight: 700; 
+    cursor: pointer; 
+    width: 100%; 
+    margin-top: 12px; 
+    box-shadow: 0 4px 6px -1px rgba(217, 119, 6, 0.2);
+    transition: all 0.2s ease;
+}
+input[type="submit"]:hover { 
+    background-color: var(--accent-hover); 
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px -2px rgba(217, 119, 6, 0.3);
+}
+input[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+/* RODAPÉ INTEGRADO */
+footer { 
+    margin-top: auto; 
+    text-align: center; 
+    font-size: 0.8rem; 
+    color: var(--text-muted); 
+    padding: 30px 0 10px 0; 
+    width: 100%;
+}
+
+/* RESPONSIVIDADE (Ajustes finos para Desktop) */
+@media (min-width: 480px) {
+    .checkbox-group { 
+        grid-template-columns: 1fr 1fr; /* Transiciona de lista para duas colunas se houver espaço */
+    }
+}

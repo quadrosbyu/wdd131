@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página Avaliação de Marcelo Quadros  Fundamentos da Web Dinâmica.">
+    <meta name="author" content="Marcelo Quadros">
+    <title>Avaliação Recebida</title>
+    <style>
+        :root {
+            --success-color: #10b981;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --primary-color: #2563eb;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-color); padding: 20px; display: flex; flex-direction: column; min-height: 100vh; justify-content: center; align-items: center; }
+        
+        main { max-width: 500px; width: 100%; background: var(--card-bg); padding: 40px 30px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); text-align: center; }
+        .icon { font-size: 4rem; color: var(--success-color); margin-bottom: 15px; }
+        h1 { margin-bottom: 10px; font-size: 1.5rem; color: var(--text-color); }
+        p { color: #64748b; margin-bottom: 25px; line-height: 1.5; }
+        
+        /* Contador Estilizado */
+        .counter-box { background-color: #f1f5f9; padding: 15px; border-radius: 8px; margin-bottom: 25px; border: 1px solid #e2e8f0; }
+        .counter-box span { font-weight: bold; color: var(--primary-color); font-size: 1.2rem; }
+        
+        a { display: inline-block; background-color: var(--primary-color); color: white; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: bold; transition: background 0.2s; }
+        a:hover { background-color: #1d4ed8; }
+        
+        footer { margin-top: 40px; text-align: center; font-size: 0.85rem; color: #64748b; }
+    </style>
+</head>
+<body>
+
+    <main>
+        <div class="icon">&check;</div>
+        <h1>Obrigado pela sua avaliação!</h1>
+        <p>Seus comentários foram enviados com sucesso e nos ajudam a melhorar nossos produtos continuamente.</p>
+        
+        <!-- Bloco do Contador de Avaliações -->
+        <div class="counter-box">
+            Você já concluiu um total de <span id="contador-avaliacoes">0</span> avaliações no nosso site.
+        </div>
+
+        <a href="formulario.html">Avaliar outro produto</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Sistema de Avaliação de Produtos. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

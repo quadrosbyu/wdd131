@@ -1,9 +1,30 @@
 // Array de Produtos fornecido pela atividade
 const produtos = [
-    { id: "p1", nome: "Mecanismo Avançado" },
-    { id: "p2", nome: "Dispositivo Premium" },
-    { id: "p3", nome: "Ferramenta Essencial" },
-    { id: "p4", nome: "Componente Supremo" }
+  {
+    id: "fc-1888",
+    nome: "capacitor de fluxo",
+    classificacaomedia: 4.5
+  },
+  {
+    id: "fc-2050",
+    nome: "fios elétricos",
+    classificacaomedia: 4.7
+  },
+  {
+    id: "fs-1987",
+    nome: "circuitos de tempo",
+    classificacaomedia: 3.5
+  },
+  {
+    id: "ac-2000",
+    nome: "reator de baixa tensão",
+    classificacaomedia: 3.9
+  },
+  {
+    id: "jj-1969",
+    nome: "equalizador de distorção",
+    classificacaomedia: 5.0
+  }
 ];
 
 // Executa assim que o DOM estiver pronto

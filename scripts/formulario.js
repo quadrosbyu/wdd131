@@ -18,17 +18,29 @@ const produtos = [
   {
     id: "ac-2000",
     nome: "reator de baixa tensão",
-    classificacaomedia: 3.9
-  },
-  {
-    id: "jj-1969",
-    nome: "equalizador de distorção",
-    classificacaomedia: 5.0
   }
 ];
 
-// Executa assim que o DOM estiver pronto
+// Executa o código assim que o DOM estiver totalmente carregado
 document.addEventListener("DOMContentLoaded", () => {
+    // 1. Seleciona o elemento <select> pelo ID
+    const selectProduto = document.getElementById("produto");
+
+    // 2. Itera sobre o array de produtos
+    produtos.forEach(produto => {
+        // 3. Cria um novo elemento <option>
+        const option = document.createElement("option");
+        
+        // 4. Define o atributo 'value' com o ID do produto
+        option.value = produto.id;
+        
+        // 5. Define o texto visível para o usuário (com inicial maiúscula)
+        option.textContent = produto.nome.charAt(0).toUpperCase() + produto.nome.slice(1);
+        
+        // 6. Adiciona a opção configurada dentro do select
+        selectProduto.appendChild(option);
+    });
+});
     
     // VERIFICAÇÃO 1: Se estiver na página do FORMULÁRIO
     const selectProduto = document.getElementById("produto");

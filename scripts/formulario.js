@@ -23,3 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Elemento select com ID 'produto' não foi encontrado.");
     }
 });
+ // --- DATAS DO RODAPÉ ---
+    const yearSpan = document.getElementById("currentyear");
+    const lastModifiedSpan = document.getElementById("lastModified");
+    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+    if (lastModifiedSpan) lastModifiedSpan.textContent = document.lastModified;

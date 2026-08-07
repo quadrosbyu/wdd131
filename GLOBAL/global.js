@@ -1,9 +1,9 @@
 // Banco de dados simulado em um Array de Objetos
 const produtos = [
     { id: 1, nome: "SSD 480GB Kingston", preco: 499.90, categoria: "armazenamento", img: "https://m.magazineluiza.com.br/a-static/420x420/ssd-480-gb-kingston-dc450r-sata3-2-5-leitura-560mb-s-e-gravacao-510mb-s-sedc450r-480g/kabum/362950/413d05de6c84e5b6d8bbddf112725910.jpeg" },
-    { id: 2, nome: "HD Externo 1TB Seagate", preco: 580.00, categoria: "armazenamento", img: "https://m.magazineluiza.com.br/a-static/420x420/hd-externo-1-tb-seagate-barracuda-1-5-inch-7200-rpm-sata3/kabum/362950/413d05de6c84e5b6d8bbddf112725910.jpeg" },
-    { id: 3, nome: "Mouse Gamer Redragon", preco: 295.00, categoria: "perifericos", img: "https://m.magazineluiza.com.br/a-static/420x420/mouse-gamer-redragon-k552/kabum/362950/413d05de6c84e5b6d8bbddf112725910.jpeg" },
-    { id: 4, nome: "Teclado Mecânico RGB", preco: 395.00, categoria: "perifericos", img: "https://m.magazineluiza.com.br/a-static/420x420/teclado-mecanico-rgb-redragon-k552/kabum/362950/413d05de6c84e5b6d8bbddf112725910.jpeg" }
+    { id: 2, nome: "HD Externo 1TB Seagate", preco: 580.00, categoria: "armazenamento", img: "https://a-static.mlcdn.com.br/800x560/hd-externo-1tb-seagate-stbx1000101-usb-3-0/alvecitimoteo/40784a3a2a5c11ef88db4201ac185034/61d9f035cc1d53a1b2eb4a4c403c88b2.jpeg" },
+    { id: 3, nome: "Mouse Gamer Redragon", preco: 295.00, categoria: "perifericos", img: "https://m.media-amazon.com/images/I/51w6x6GDBXL._AC_SX679_.jpg" },
+    { id: 4, nome: "Teclado Mecânico RGB", preco: 395.00, categoria: "perifericos", img: "https://a-static.mlcdn.com.br/800x560/teclado-mecanico-rgb-switch-blue-full-size-com-descanso-de-pulso-rgb-lateral-dark-aryaman-redragon/originaltech/outck569rgbptbluept/5097275be26a0e4784e81c3ceecb924d.jpeg" }
 ];
 
 // Inicialização do Carrinho puxando do LocalStorage (uso de Branch Condicional)

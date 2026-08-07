@@ -7,7 +7,7 @@
     --error-color: #d9534f;
     --success-color: #28a745;
 }
-
+/* Configurações Gerais e Reset */
 *{
     margin: 0;
     padding: 0;

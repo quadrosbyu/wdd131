@@ -8,7 +8,7 @@
     --success-color: #28a745;
 }
 
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -39,7 +39,7 @@ header .logo a {
     gap: 12px;             /* Espaçamento perfeito entre o logo e o texto */
     text-decoration: none;
 }
-* Ajuste para o contêiner do logotipo */
+/* Ajuste para o contêiner do logotipo */
 header .logo a {
     display: flex;
     align-items: center;

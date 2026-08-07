@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página produtos Global Informática.">
+    <meta name="author" content="Marcelo Quadros">
+    <title>Produtos e Suprimentos | Global Informática</title>
+    <link rel="stylesheet" href="GLOBAL/global.css">
+</head>
+<body>
+    <header>
+        <div class="logo">👨‍💻 Global Informática</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produtos.html" class="active">Produtos</a></li>
+                <li><a href="contato.html">Contato & Orçamento</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container-loja">
+            <div class="vitrine">
+                <h2>Suprimentos Disponíveis</h2>
+                <!-- Filtro Dinâmico -->
+                <div class="filtros">
+                    <button class="btn-filtro" data-categoria="todos">Todos</button>
+                    <button class="btn-filtro" data-categoria="armazenamento">Armazenamento</button>
+                    <button class="btn-filtro" data-categoria="perifericos">Periféricos</button>
+                </div>
+                <!-- Produtos injetados via JS -->
+                <div id="lista-produtos" class="grid-produtos"></div>
+            </div>
+
+            <aside class="carrinho-container">
+                <h2>Seu Carrinho</h2>
+                <div id="itens-carrinho"></div>
+                <div class="total-carrinho">
+                    <strong>Total: <span id="valor-total">R$ 0,00</span></strong>
+                </div>
+                <button id="btn-limpar" class="btn-danger">Limpar Carrinho</button>
+            </aside>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Global Informática. Todos os direitos reservados. | <a href="referencias.html">Fontes e Referências</a></p>
+    </footer>
+    <script src="GLOBAL/global.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página Formulário Global Informática.">
+    <meta name="author" content="Marcelo Quadros">
+    <title>Contato e Orçamento | Global Informática</title>
+    <link rel="stylesheet" href="GLOBAL/global.css">
+</head>
+<body>
+    <header>
+        <div class="logo">👨‍💻 Global Informática</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="contato.html" class="active">Contato & Orçamento</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-form">
+        <h2>Solicite um Orçamento Técnico</h2>
+        <p>Preencha os dados abaixo detalhando o problema do seu equipamento.</p>
+        
+        <form id="form-contato" novalidate>
+            <div class="form-group">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" required minlength="3">
+                <span class="erro-msg" id="erro-nome"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail de Contato:</label>
+                <input type="email" id="email" name="email" required>
+                <span class="erro-msg" id="erro-email"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="equipamento">Tipo de Equipamento:</label>
+                <select id="equipamento" name="equipamento" required>
+                    <option value="">Selecione...</option>
+                    <option value="notebook">Notebook</option>
+                    <option value="desktop">Computador de Mesa (Desktop)</option>
+                    <option value="impressora">Impressora</option>
+                </select>
+                <span class="erro-msg" id="erro-equipamento"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="mensagem">Descrição do Defeito:</label>
+                <textarea id="mensagem" name="mensagem" rows="5" required minlength="10"></textarea>
+                <span class="erro-msg" id="erro-mensagem"></span>
+            </div>
+
+            <button type="submit" class="btn">Enviar Solicitação</button>
+        </form>
+        <div id="sucesso-envio" class="alerta-sucesso"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Global Informática. Todos os direitos reservados. | <a href="referencias.html">Fontes e Referências</a></p>
+    </footer>
+    <script src="GLOBAL/global.js"></script>
+</body>
+</html>

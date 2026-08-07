@@ -36,6 +36,20 @@ header .logo {
     font-size: 1.5rem;
     font-weight: bold;
 }
+* Ajuste para o contêiner do logotipo */
+header .logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+/* Dimensionamento do logotipo responsivo */
+header .logo img {
+    height: 50px;          /* Define uma altura fixa elegante para o cabeçalho */
+    width: auto;           /* Mantém a proporção original da largura da imagem */
+    max-width: 100%;       /* Impede que o logotipo ultrapasse a tela em dispositivos muito pequenos */
+    object-fit: contain;   /* Garante que a imagem não fique distorcida */
+}
 
 header nav ul {
     display: flex;
@@ -155,4 +169,7 @@ footer a { color: #fff; }
     header { flex-direction: column; gap: 15px; text-align: center; }
     .container-loja { flex-direction: column; }
     .hero h1 { font-size: 1.8rem; }
+    header .logo {
+        margin-bottom: 10px; /* Dá um espaço entre o logo e o menu de navegação no celular */
+    }
 }

@@ -1,9 +1,9 @@
 // Banco de dados simulado em um Array de Objetos
 const produtos = [
-    { id: 1, nome: "SSD 480GB Kingston", preco: 249.90, categoria: "armazenamento", img: "https://picsum.photos" },
-    { id: 2, nome: "HD Externo 1TB Seagate", preco: 389.00, categoria: "armazenamento", img: "https://picsum.photos" },
-    { id: 3, nome: "Mouse Gamer Redragon", preco: 120.00, categoria: "perifericos", img: "https://picsum.photos" },
-    { id: 4, nome: "Teclado Mecânico RGB", preco: 299.90, categoria: "perifericos", img: "https://picsum.photos" }
+    { id: 1, nome: "SSD 480GB Kingston", preco: 499.90, categoria: "armazenamento", img: "https://m.magazineluiza.com.br/a-static/420x420/ssd-480-gb-kingston-dc450r-sata3-2-5-leitura-560mb-s-e-gravacao-510mb-s-sedc450r-480g/kabum/362950/413d05de6c84e5b6d8bbddf112725910.jpeg" },
+    { id: 2, nome: "HD Externo 1TB Seagate", preco: 580.00, categoria: "armazenamento", img: "https://m.magazineluiza.com.br/a-static/420x420/hd-externo-1-tb-seagate-barracuda-1-5-inch-7200-rpm-sata3/kabum/362950/413d05de6c84e5b6d8bbddf112725910.jpeg" },
+    { id: 3, nome: "Mouse Gamer Redragon", preco: 295.00, categoria: "perifericos", img: "https://m.magazineluiza.com.br/a-static/420x420/mouse-gamer-redragon-k552/kabum/362950/413d05de6c84e5b6d8bbddf112725910.jpeg" },
+    { id: 4, nome: "Teclado Mecânico RGB", preco: 395.00, categoria: "perifericos", img: "https://m.magazineluiza.com.br/a-static/420x420/teclado-mecanico-rgb-redragon-k552/kabum/362950/413d05de6c84e5b6d8bbddf112725910.jpeg" }
 ];
 
 // Inicialização do Carrinho puxando do LocalStorage (uso de Branch Condicional)

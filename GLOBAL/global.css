@@ -32,9 +32,12 @@ header {
     flex-wrap: wrap;
 }
 
-header .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+/* Alinha a imagem e o texto lado a lado centralizados */
+header .logo a {
+    display: flex;
+    align-items: center;
+    gap: 12px;             /* Espaçamento perfeito entre o logo e o texto */
+    text-decoration: none;
 }
 * Ajuste para o contêiner do logotipo */
 header .logo a {
@@ -45,10 +48,17 @@ header .logo a {
 
 /* Dimensionamento do logotipo responsivo */
 header .logo img {
-    height: 50px;          /* Define uma altura fixa elegante para o cabeçalho */
-    width: auto;           /* Mantém a proporção original da largura da imagem */
-    max-width: 100%;       /* Impede que o logotipo ultrapasse a tela em dispositivos muito pequenos */
-    object-fit: contain;   /* Garante que a imagem não fique distorcida */
+    height: 40px;          /* Altura ligeiramente menor para harmonizar com o texto */
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+/* Estilização do texto do título ao lado da imagem */
+header .logo span {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
 }
 
 header nav ul {
@@ -170,6 +180,9 @@ footer a { color: #fff; }
     .container-loja { flex-direction: column; }
     .hero h1 { font-size: 1.8rem; }
     header .logo {
-        margin-bottom: 10px; /* Dá um espaço entre o logo e o menu de navegação no celular */
+        margin-bottom: 5px;
+    }
+    header .logo span {
+        font-size: 1.3rem; /* Diminui levemente o texto em telas pequenas */
     }
 }
